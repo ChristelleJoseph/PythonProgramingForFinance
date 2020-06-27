@@ -6,14 +6,6 @@ import pandas_datareader.data as web
 
 
 style.use('ggplot')
-
-# start = dTime.datetime(2000,1,1)
-# end = dTime.datetime(2020,12,31)
-# dataFrame = web.DataReader('TSLA', 'yahoo', start, end)
-# dataFrame.to_csv('tsla.csv')
-
 df = pd.read_csv('tsla.csv', parse_dates = True, index_col =0)
-#print(df.head())
-
 df.plot()
 plt.show()
