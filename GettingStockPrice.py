@@ -1,14 +1,19 @@
-import datetime as dTime
-import matplotlib.pyplot
+import datetime as dt
+import matplotlib.pyplot as plt
 from matplotlib import style
-import pandas as pandas
+import pandas as pd
 import pandas_datareader.data as web
 
 
 style.use('ggplot')
 
-start = dTime.datetime(2000,1,1)
-end = dTime.datetime(2020,12,31)
+# start = dTime.datetime(2000,1,1)
+# end = dTime.datetime(2020,12,31)
+# dataFrame = web.DataReader('TSLA', 'yahoo', start, end)
+# dataFrame.to_csv('tsla.csv')
 
-dataFrame = web.DataReader('TSLA', 'yahoo', start, end)
-print(dataFrame.tail())
+df = pd.read_csv('tsla.csv', parse_dates = True, index_col =0)
+#print(df.head())
+
+df.plot()
+plt.show()
